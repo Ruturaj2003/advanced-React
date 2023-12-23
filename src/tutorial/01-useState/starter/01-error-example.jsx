@@ -9,7 +9,9 @@ const ErrorExample = () => {
     <div>
       <h2>useState error example</h2>
       <h4>Count {count}</h4>
-      <button onClick={updateCount}>Click me</button>
+      <button className="btn" onClick={updateCount}>
+        Click me
+      </button>
     </div>
   );
 };
