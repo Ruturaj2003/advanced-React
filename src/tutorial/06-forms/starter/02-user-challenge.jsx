@@ -7,14 +7,15 @@ const UserChallenge = () => {
     e.preventDefault();
 
     setPeople([...people, { name: name, id: Math.random() + Math.random() }]);
+    setName('');
   };
 
   const handleRemove = (id) => {
-    let newPeople = people.filter((person) => {
-      if (person.id !== id) {
-        return person.name;
-      }
-    });
+    let newPeople = people.filter((person) => person.id !== id);
+    // if (person.id !== id) {
+    //   return person.name;
+    // }
+
     setPeople(newPeople);
 
     // setPeople(() => {
