@@ -1,8 +1,8 @@
 import { useContext } from 'react';
-import { NavbarContext } from './Navbar';
+import { useCustomContextHook } from './Navbar';
 
 const UserContainer = () => {
-  const [user, logOut] = useContext(NavbarContext);
+  const [user, logOut] = useCustomContextHook();
   return (
     <div>
       <h2>UserContainer</h2>
