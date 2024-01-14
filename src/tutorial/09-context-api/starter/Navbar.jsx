@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, createContext } from 'react';
 import NavbarLinks from './NavbarLinks';
 
+export const NavbarContext = createContext();
 const Navbar = () => {
   const [user, setUser] = useState({ name: 'Ray' });
   const logOut = () => {
@@ -10,9 +11,11 @@ const Navbar = () => {
   };
   console.log(user.name);
   return (
-    <div>
-      <NavbarLinks user={user} logOut={logOut}></NavbarLinks>
-    </div>
+    <NavbarContext.Provider value={[user, logOut]}>
+      <div>
+        <NavbarLinks></NavbarLinks>
+      </div>
+    </NavbarContext.Provider>
   );
 };
 export default Navbar;
