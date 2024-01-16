@@ -23,6 +23,8 @@ const reducer = (state, action) => {
       people: data,
     };
   }
+
+  throw new Error(`No matching "${action.type}" - action type`);
 };
 
 const ReducerBasics = () => {
